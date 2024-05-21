@@ -1,0 +1,28 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  info:
+    strategy:
+      matrix:
+        arch: [amd64, ARM64]
+    runs-on:
+      - self-hosted
+      - ${{ matrix.arch }}
+    steps:
+      - name: Get Machine Info
+        run: |
+          echo "Machine Info"
+          echo "------------"
+          echo "OS: $(uname -a)"
+          echo "CPU: $(lscpu)"
+          echo "Memory: $(free -h)"
+          echo "Disk: $(df -h)"
+          echo "------------"
