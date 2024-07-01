@@ -3,8 +3,8 @@ module github.com/nimnest/nimnest
 go 1.22.3
 
 require (
-	github.com/gofiber/fiber/v2 v2.52.4
 	github.com/docker/docker v26.1.3+incompatible
+	github.com/gofiber/fiber/v2 v2.52.5
 )
 
 require (
